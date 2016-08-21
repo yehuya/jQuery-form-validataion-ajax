@@ -36,7 +36,8 @@ send.addParam({name: '<PARAM-NAME', value: '<PARAM-VALUE>'});
 ```
 
 ###Validation 
-The default validations
+The default validations.
+
 Insert the name of the validation in 'validation' attribute in the html (see Html example)
 
 * israelPhone - Israel phone numbers

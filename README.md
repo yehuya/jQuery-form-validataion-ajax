@@ -1,9 +1,9 @@
 # jQuery-form-validataion-ajax
-This plugin let you send form easly with validtaion
-* add some extra field without hidden input
-* check form validation before form submit
-* create custom validation
-* send form via ajax when form submit 
+This plugin let you send form easly via ajax with validtaions
+* Add some extra params without hidden input
+* Check form validation before form submit
+* Create custom validation
+* Send form via ajax when form submit 
 
 ## Init
 
@@ -16,10 +16,6 @@ validation="text" validation-text="First name incorrect" required/>
 * validation - the name of validation function (you can create your own in addition to the defaults)
 * validation-text - this text will show up when the input invalid
 * required - if input is required
-
-####Notice
-
-The 'name' of the input is the GET / POST key for ajax.
 
 ###JavaScript
 ```javascript
@@ -44,9 +40,9 @@ The default validations
 Insert the name of the validation in 'validation' attribute in the html (see Html example)
 
 * israelPhone - Israel phone numbers
-* text - only for names 
+* text - only for names (without some signs)
 * fullName - for first name & last name in the same input - its use 'text' validation
-* email - for email
+* email
 
 #### Add custom validation
 ```javascript
@@ -68,5 +64,6 @@ After the user push the button the plugin check if all the require inputs is val
 If form is valid it will send the form via ajax to the url, else it will return error with your validation-text as placeholder.
 
 ###Notice
-* if input is invalid the plugin add css class - 'inputError' to the input.
-* you must use jQuery for this plugin
+* If input is invalid the plugin add css class - 'inputError' to the input
+* You must use jQuery for this plugin
+* The 'name' of the input is the GET / POST key for ajax

@@ -243,7 +243,7 @@
             validation: false
         }
 
-        var param = $.extend(def, obj);
+        var param = jQuery.extend(def, obj);
         if(param.name != null){
             this.inputs.push(param);
         }

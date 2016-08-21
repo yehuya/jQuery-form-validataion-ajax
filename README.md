@@ -67,3 +67,4 @@ If form is valid it will send the form via ajax to the url, else it will return 
 * If input is invalid the plugin add css class - 'inputError' to the input
 * You must use jQuery for this plugin
 * The 'name' of the input is the GET / POST key for ajax
+* Remmember you need to use server validaiton to prevent Hackers attacks

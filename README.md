@@ -68,4 +68,5 @@ After the user push the button the plugin check if all the require inputs is val
 If form is valid it will send the form via ajax to the url, else it will return error with your validation-text as placeholder.
 
 ###Notice
-If input is invalid the plugin add css class - 'inputError' to the input.
+* if input is invalid the plugin add css class - 'inputError' to the input.
+* you must use jQuery for this plugin

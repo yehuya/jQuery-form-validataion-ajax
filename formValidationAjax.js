@@ -5,12 +5,12 @@
  * jquery
  */
 
-(function(jQuery){
+(function($){
     // JQUERY IS MUUST
-    if(typeof jQuery === 'undefined') return console.error('jQuery is must for sendForm plugin');
+    if(typeof $ === 'undefined') return console.error('jQuery is must for sendForm plugin');
 
     // DOM binding
-    jQuery.fn.form = function(options){
+    $.fn.form = function(options){
         return new form(this, options);
     }
 
@@ -25,7 +25,7 @@
             done: null
         }
 
-        this.options = jQuery.extend(option, options);
+        this.options = $.extend(option, options);
         this.inputs = [];
         this.ok;
         this.click = true; // for prevent dbl sending
@@ -73,7 +73,7 @@
             textareaClean.push(textarea[i]);
         }
         field.textarea = textareaClean;
-
+        
         return this.fields = field;
     }
 
@@ -139,21 +139,24 @@
      */
     form.prototype.inputsObject = function(){
         var fields = this.fields;
-
+       
         for(var f in fields){
             for(var i = 0 ; i < fields[f].length ; i++){
                 var field = fields[f][i];
-                var obj = {
-                    name: field.name,
-                    type: f == 'input' ? field.type : f,
-                    value: field.value,
-                    require: field.hasAttribute('required') ? true : false,
-                    validation: field.hasAttribute('validation') ? field.getAttribute('validation') : false,
-                    validation_text: field.hasAttribute('validation-text') ? field.getAttribute('validation-text') : false,
-                    element: field
-                }
+              
+                if(field && field.name != undefined && field.name.trim().length > 0 && field.type != 'submit'){
+                    var obj = {
+                        name: field.name,
+                        type: f == 'input' ? field.type : f,
+                        value: field.value,
+                        require: field.hasAttribute('required') ? true : false,
+                        validation: field.hasAttribute('validation') ? field.getAttribute('validation') : false,
+                        validation_text: field.hasAttribute('validation-text') ? field.getAttribute('validation-text') : false,
+                        element: field
+                    }
 
-                this.inputs.push(obj);
+                    this.inputs.push(obj);
+                }
             }
         }
 
@@ -243,7 +246,7 @@
             validation: false
         }
 
-        var param = jQuery.extend(def, obj);
+        var param = $.extend(def, obj);
         if(param.name != null){
             this.inputs.push(param);
         }
@@ -290,7 +293,7 @@
 
             if(self.ok && self.click){
                 self.click = false;
-                jQuery.ajax({
+                $.ajax({
                     type: self.options.method,
                     url: self.options.url,
                     data: self.ajax,
@@ -303,4 +306,4 @@
         });
     }
 
-})($);
+})(jQuery);

@@ -32,7 +32,7 @@ var send = $('<DOM>').form({
 ####Add param to the ajax request (hidden input)
 Sometimes you want to add special params to the form like UTM etc..
 ```javascript 
-send.addParam({name: '<PARAM-NAME', value: '<PARAM-VALUE>'});
+send.addParam({name: '<PARAM-NAME>', value: '<PARAM-VALUE>'});
 ```
 
 ###Validation 

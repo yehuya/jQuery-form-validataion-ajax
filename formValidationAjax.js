@@ -92,7 +92,7 @@
             }
         },
         fullName: function(value){
-            var split = value.split(' ');
+            var split = value.trim().split(' ');
             if(split.length > 1){
                 var valid = true;
                 for(var i = 0 ; i < split.length ; i++){

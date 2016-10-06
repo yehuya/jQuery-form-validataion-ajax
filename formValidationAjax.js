@@ -96,7 +96,7 @@
             if(split.length > 1){
                 var valid = true;
                 for(var i = 0 ; i < split.length ; i++){
-                    valid = this.validation.text(split[i]);
+                    valid = this.text(split[i]);
                     if(!valid){
                         return valid;
                     }

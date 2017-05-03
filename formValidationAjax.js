@@ -185,7 +185,7 @@
                     }
                 }
             }else{
-                if(input.validation){
+                if(input.validation && input.value.trim().length > 0){
                     var valid = this.validation[input.validation](input.value);
                     input.valid = valid; 
                 }else{

@@ -2,7 +2,10 @@
 
 /**
  * send form via ajax with validation
- * we used jquery for $.ajax only
+ * we used jquery for $.ajax only & bind element
+ * TODO: fix bug - not working with jQuery - $(elem).form()
+ *   this.elem - not recognized pure js fn (because its jquery element)
+ * TODO: create $.ajax with pure js
  */
 
 (function(){

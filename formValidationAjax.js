@@ -9,15 +9,14 @@
     // JQUERY IS MUUST
     if(typeof jQuery === 'undefined') return console.error('jQuery is must for sendForm plugin');
 
-    if(typeof jQuery !== undefined){
-        // DOM binding
-        jQuery.fn.form = function(options){
-            return new form(this, options);
-        }
+    // DOM binding
+    jQuery.fn.form = function(options){
+        return new form(this, options);
     }
 
-    function form(jqueryElem, options){
-        this.elem = jqueryElem;
+    window.form = form;
+    function form(element, options){
+        this.elem = element;
 
         this.options = extendImmutable({
             url: null,
@@ -239,7 +238,7 @@
 
             if(self.ok && self.click){
                 self.click = false;
-                $.ajax({
+                jQuery.ajax({
                     type: self.options.method,
                     url: self.options.url,
                     data: self.ajax,

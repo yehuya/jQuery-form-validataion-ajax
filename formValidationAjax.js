@@ -1,6 +1,7 @@
 "use strict";
 
 /**
+ * Github: https://github.com/yehuya/jQuery-form-validataion-ajax
  * send form via ajax with validation
  * jquery
  */
